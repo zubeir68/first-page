@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "./node_modules/.bin/eslint app.js",
-    "start": "DEBUG=app node app.js",
+    "start": "DEBUG=app nodemon app.js",
     "lint": "eslint app.js"
   },
   "author": "Zubeir Mohamed",
@@ -23,5 +23,14 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0"
+  },
+  "nodemonConfig": {
+    "restartable":"rs",
+    "ignore": ["node_modules/**/node_modules"],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
   }
 }
