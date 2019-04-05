@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/eslint app.js",
+    "start": "DEBUG=app node app.js",
+    "lint": "eslint app.js"
   },
   "author": "Zubeir Mohamed",
   "license": "ISC",
@@ -14,6 +16,12 @@
     "debug": "^4.1.1",
     "express": "^4.16.4",
     "jquery": "^3.3.1",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.10"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }
