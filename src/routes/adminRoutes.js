@@ -1,29 +1,10 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
+
 const adminRouter = express.Router();
-const debug = require('debug');
+const debug = require('debug')('app:adminRoutes');
 
-function router(nav) {
-
-  const books = [{
-    author: 'Chinua Achebe',
-    title: 'Things Fall Apart',
-    genre: 'Action',
-    read: false
-  },
-  {
-    author: 'Hans Christian Andersen',
-    title: 'Fairy tales',
-    genre: 'Comedy',
-    read: false
-  },
-  {
-    author: 'Dante Alighieri',
-    title: 'The Divine Comedy',
-    genre: 'Love',
-    read: false
-  }];
-
+function router() {
   adminRouter.route('/')
     .get((req, res) => {
       const url = 'mongodb://localhost:27017';
@@ -38,7 +19,7 @@ function router(nav) {
 
           const db = client.db(dbName);
 
-          const response = await db.collection('books').insertMany(books);
+          const response = await db.collection('books');
           res.json(response);
         } catch (err) {
           debug(err.stack);
