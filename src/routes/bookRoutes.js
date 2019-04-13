@@ -7,24 +7,24 @@ const sql = require('mssql');
 const bookRouter = express.Router();
 
 function router(nav) {
-  // const books = [{
-  //   author: 'Chinua Achebe',
-  //   title: 'Things Fall Apart',
-  //   genre: 'Action',
-  //   read: false
-  // },
-  // {
-  //   author: 'Hans Christian Andersen',
-  //   title: 'Fairy tales',
-  //   genre: 'Comedy',
-  //   read: false
-  // },
-  // {
-  //   author: 'Dante Alighieri',
-  //   title: 'The Divine Comedy',
-  //   genre: 'Love',
-  //   read: false
-  // }];
+  const books = [{
+    author: 'Chinua Achebe',
+    title: 'Things Fall Apart',
+    genre: 'Action',
+    read: false
+  },
+  {
+    author: 'Hans Christian Andersen',
+    title: 'Fairy tales',
+    genre: 'Comedy',
+    read: false
+  },
+  {
+    author: 'Dante Alighieri',
+    title: 'The Divine Comedy',
+    genre: 'Love',
+    read: false
+  }];
 
   bookRouter.route('/')
     .get((req, res) => {

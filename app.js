@@ -32,8 +32,10 @@ app.set('view engine', 'ejs');
 const nav = [{ link: '/books', title: 'Book' }, { link: '/authors', title: 'Author' }];
 
 const bookRouter = require('./src/routes/bookRoutes')(nav);
+const adminRouter = require('./src/routes/adminRoutes')(nav);
 
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 app.get('/', (req, res) => {
   res.render('index',
     {
